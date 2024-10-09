@@ -2,6 +2,9 @@ package obug
 
 import "core:fmt"
 import "core:mem"
+import "core:os"
+
+exit :: os.exit
 
 tracked_run :: proc(run: #type proc()) -> int {
 	fmt.println("tracking allocator")
@@ -23,4 +26,3 @@ tracked_run :: proc(run: #type proc()) -> int {
 	}
 	return errors
 }
-
