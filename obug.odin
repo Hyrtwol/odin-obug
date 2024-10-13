@@ -15,7 +15,8 @@ LEAK_COLOR :: ansi.CSI + ansi.BG_DEFAULT + ";" + ansi.FG_YELLOW + ansi.SGR
 tracked_run :: proc(run: #type proc()) -> int {
 	fmt.print(NO_LEAKS_COLOR)
 	fmt.print(" -= using tracking allocator =- ")
-	fmt.println(RESET_COLOR)
+	fmt.print(RESET_COLOR)
+	fmt.println(" \U0001F50D")
 
 	track: mem.Tracking_Allocator
 	mem.tracking_allocator_init(&track, context.allocator)
