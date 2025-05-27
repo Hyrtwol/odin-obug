@@ -1,6 +1,6 @@
 package obug
 
-import "core:encoding/ansi"
+import "core:terminal/ansi"
 import "core:fmt"
 import "core:mem"
 
