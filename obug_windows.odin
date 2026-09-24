@@ -2,15 +2,15 @@ package obug
 
 import win32 "core:sys/windows"
 
-wanted_code_page := win32.CODEPAGE.UTF8
+WANTED_CODE_PAGE :: win32.CODEPAGE.UTF8
 
 @(init)
 init_console :: proc "contextless" () {
 	cpi, cpo := win32.GetConsoleCP(), win32.GetConsoleOutputCP()
-	if cpi != wanted_code_page {
-		win32.SetConsoleCP(wanted_code_page)
+	if cpi != WANTED_CODE_PAGE {
+		win32.SetConsoleCP(WANTED_CODE_PAGE)
 	}
-	if cpo != wanted_code_page {
-		win32.SetConsoleOutputCP(wanted_code_page)
+	if cpo != WANTED_CODE_PAGE {
+		win32.SetConsoleOutputCP(WANTED_CODE_PAGE)
 	}
 }
