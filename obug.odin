@@ -55,14 +55,14 @@ print_leaks :: proc(track: ^mem.Tracking_Allocator) -> int {
 		}
 	} else {
 		print_color(NO_LEAKS_COLOR, " -= no leaks =- ")
-		fmt.println(" \U0001F37B")
+		fmt.println(" \U0001F37B") // 🍻
 	}
 	return errors
 }
 
 tracked_run :: proc(run: #type proc() -> int) -> int {
 	print_color(NO_LEAKS_COLOR, " -= using tracking allocator =- ")
-	fmt.println(" \U0001F50D")
+	fmt.println(" \U0001F50D") // 🔍
 
 	track: mem.Tracking_Allocator
 	mem.tracking_allocator_init(&track, context.allocator)
